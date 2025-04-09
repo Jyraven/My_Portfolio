@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -26,26 +26,29 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={
-          <main className="font-inter bg-cream dark:bg-gray-900 transition-colors duration-300">
-            <ThemeToggle />
-            <FloatingNav />
-            <Header />
-            <About />
-            <Skills />
-            <Projects />
-            <TechWatch />
-            <Contact />
-            <Footer />
-          </main>
-        } />
+        <Route
+          path="/"
+          element={
+            <main className="font-inter bg-cream dark:bg-gray-900 transition-colors duration-300">
+              <ThemeToggle />
+              <FloatingNav />
+              <Header />
+              <About />
+              <Skills />
+              <Projects />
+              <TechWatch />
+              <Contact />
+              <Footer />
+            </main>
+          }
+        />
         <Route path="/project/:id" element={<ProjectDetail />} />
         <Route path="/techwatch/:id" element={<TechArticle />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
