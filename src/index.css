@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-gray-900 font-inter dark:bg-gray-900 dark:text-white transition-colors duration-300;
+  }
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Ajustements pour le mode sombre */
+.dark section {
+  @apply bg-gray-900 text-white;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .text-gray-600 {
+  @apply text-gray-300;
+}
+
+.dark .border-gray-300 {
+  @apply border-gray-600;
+}
+
+/* Sections avec fond clair */
+section:not(.dark) {
+  @apply bg-slate-50;
+}
+
+section.bg-white {
+  @apply bg-slate-50;
+}
