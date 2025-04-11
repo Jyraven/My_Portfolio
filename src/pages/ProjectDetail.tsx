@@ -285,7 +285,7 @@ export default function ProjectDetail() {
                 )}
   
                 <a
-                  href="public/assets/docs/referentiel.xlsx"
+                  href="/My_Portfolio/assets/docs/referentiel.xlsx"
                   download
                   className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
                 >
