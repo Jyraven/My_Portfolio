@@ -46,7 +46,7 @@ export default function ProjectDetail() {
     "1": {
       title: "Application de Gestion des frais",
       description: "Une application web complète développée pour GSB ,qui est une entreprise fictive, permettant la gestion de fiches de frais.",
-      image: "public/assets/images/gsb.webp",
+      image: "/My_Portfolio/assets/images/gsb.webp",
       technologies: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
       github: "https://github.com/Jyraven/Afip.git",
       features: [
@@ -88,7 +88,7 @@ export default function ProjectDetail() {
     "2": {
       title: "Portail Admin",
       description: "Une application web développée pour mon entreprise destiné à la gestion des comptes utilisateurs qui serviront à une application mobile en interne.",
-      image: "public/assets/images/admin.webp",
+      image: "/My_Portfolio/assets/images/admin.webp",
       technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "PHP", "PgSQL"],
       github: "",
       features: [
@@ -112,7 +112,7 @@ export default function ProjectDetail() {
     "3": {
       title: "Portfolio",
       description: "Portfolio personnel présentant mes compétences et réalisations de manière interactive.",
-      image: "public/assets/images/portfolio.webp",
+      image: "/My_Portfolio/assets/images/portfolio.webp",
       technologies: ["React","TypeScript","Tailwind CSS","Framer Motion","React Router","Lucide React","Formspree","Vite","ESLint"],
       github: "https://github.com/Jyraven/My_Portfolio",
       features: ["Design responsive", "Animations fluides", "Mode sombre", "SEO optimisé", "Performance optimisée"],
@@ -132,7 +132,7 @@ export default function ProjectDetail() {
     "4": {
       title: "Présence en ligne de l'organisation",
       description: "Travail pratique sur les stratégies de référencement et la visibilité en ligne d'une organisation.",
-      image: "public/assets/images/seo.webp",
+      image: "/My_Portfolio/assets/images/seo.webp",
       technologies: ["HTML5"],
       github: "",
       features: ["apprentissage des méthode de référencement","stratégies de visibilité en ligne","optimisation des balises SEO","analyse de la concurrence","suivi des performances"],
@@ -149,7 +149,7 @@ export default function ProjectDetail() {
     "5": {
       title: "GLPI",
       description: "Mise en œuvre de GLPI pour le support technique, la gestion d'inventaire et la traçabilité des incidents.",
-      image: "public/assets/images/glpi.webp",
+      image: "/My_Portfolio/assets/images/glpi.webp",
       technologies: [],
       github: "",
       features: ["Gestion des tickets d'incidents", "Suivi des demandes d'assistance", "Gestion de l'inventaire matériel", "Traçabilité des incidents"],

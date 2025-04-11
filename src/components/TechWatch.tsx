@@ -15,7 +15,7 @@ export default function TechWatch() {
       title: "L'évolution de l'Intelligence Artificielle en 2024",
       date: "15 Mars 2024",
       summary: "Analyse des dernières avancées en IA et leur impact sur le développement web...",
-      image: "assets/images/cover.webp",
+      image: "/assets/images/cover.webp",
       readTime: "5 min"
     }
   ];
