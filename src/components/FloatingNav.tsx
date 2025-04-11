@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, User, FolderGit2, Mail, Menu, X, BookOpen } from 'lucide-react';
+import { User, FolderGit2, Mail, Menu, X, BookOpen } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,12 +17,23 @@ export default function FloatingNav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavigation = (hash: string) => {
+    if (location.pathname !== '/') {
+      navigate('/' + hash);
+    } else {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsOpen(false);
+  };
+
   const navItems = [
-    { icon: Home, label: 'Accueil', href: '#' },
-    { icon: User, label: 'À Propos', href: '#about' },
-    { icon: FolderGit2, label: 'Projets', href: '#projects' },
-    { icon: BookOpen, label: 'Veille Tech', href: '#techwatch' },
-    { icon: Mail, label: 'Contact', href: '#contact' },
+    { icon: User, label: 'À Propos', hash: '#about' },
+    { icon: FolderGit2, label: 'Projets', hash: '#projects' },
+    { icon: BookOpen, label: 'Veille Tech', hash: '#techwatch' },
+    { icon: Mail, label: 'Contact', hash: '#contact' },
   ];
 
   return (
@@ -49,14 +63,13 @@ export default function FloatingNav() {
               <ul className="flex flex-col md:flex-row gap-2 bg-white/90 dark:bg-gray-950/90 backdrop-blur-lg rounded-2xl p-4 md:p-2">
                 {navItems.map((item, index) => (
                   <li key={index}>
-                    <a
-                      href={item.href}
-                      className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 rounded-full hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-300"
-                      onClick={() => setIsOpen(false)}
+                    <button
+                      onClick={() => handleNavigation(item.hash)}
+                      className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 rounded-full hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-300 w-full text-left"
                     >
                       <item.icon className="w-5 h-5" />
                       <span>{item.label}</span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

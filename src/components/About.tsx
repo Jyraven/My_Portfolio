@@ -38,9 +38,19 @@ export default function About() {
               <p className="mt-2">Support technique interne</p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
+              <h4 className="font-semibold">Appli web</h4>
+              <p className="text-gray-600">Entreprise Exadis • 2025</p>
+              <p className="mt-2">Développent d'une application de gestion des comptes</p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
               <h4 className="font-semibold">Projet École</h4>
               <p className="text-gray-600">BTS SIO • 2024-2025</p>
               <p className="mt-2">Création d'une application de gestion des frais</p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4">
+              <h4 className="font-semibold">Portfolio</h4>
+              <p className="text-gray-600">BTS SIO • 2024-2025</p>
+              <p className="mt-2">Création d'un portfolio qui servira pour mon identité professionnel</p>
             </div>
           </div>
         </motion.div>
@@ -52,7 +62,7 @@ export default function About() {
           className="text-center"
         >
           <a
-            href="/cv.pdf"
+            href="public/assets/docs/cv.pdf"
             download
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors"
           >

@@ -1,5 +1,6 @@
-import { motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const floatingAnimation = {
   animate: {
@@ -28,13 +29,29 @@ const letterVariants = {
 };
 
 export default function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const text = "Étudiant en BTS SIO SLAM";
 
+  const handleScrollToAbout = () => {
+    if (location.pathname !== '/') {
+      navigate('/#about');
+    } else {
+      const element = document.querySelector('#about');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <header className="relative h-screen flex items-center justify-center parallax"
+    <header
+      className="relative h-screen flex items-center justify-center parallax"
       style={{
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&q=80")'
-      }}>
+        backgroundImage:
+          'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?auto=format&fit=crop&q=80")'
+      }}
+    >
       <div className="text-center text-white z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -43,7 +60,7 @@ export default function Header() {
         >
           <GraduationCap className="w-16 h-16 mx-auto mb-6" />
         </motion.div>
-        
+
         <motion.h1
           className="text-5xl font-bold mb-4"
           variants={floatingAnimation}
@@ -84,12 +101,12 @@ export default function Header() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-8"
         >
-          <a
-            href="#about"
+          <button
+            onClick={handleScrollToAbout}
             className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-3 rounded-full font-medium hover:bg-white/20 transition-colors"
           >
             En savoir plus
-          </a>
+          </button>
         </motion.div>
       </div>
     </header>

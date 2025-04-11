@@ -12,6 +12,7 @@ import TechWatch from './components/TechWatch';
 import ProjectDetail from './pages/ProjectDetail';
 import TechArticle from './pages/TechArticle';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   useEffect(() => {
@@ -35,6 +36,7 @@ function App() {
             <main className="font-inter bg-cream dark:bg-gray-900 transition-colors duration-300">
               <ThemeToggle />
               <FloatingNav />
+              <ScrollToTopButton/>
               <Header />
               <About />
               <Skills />

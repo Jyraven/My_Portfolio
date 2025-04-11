@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+
 export default function Projects() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -13,8 +14,8 @@ export default function Projects() {
     {
       id: 1,
       title: "Application web de Gestion des Frais",
-      description: "Application web développée dans le cadre del'épreuve E5 du BTS SIO SLAM.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+      description: "Une application web complète développée pour GSB ,qui est une entreprise fictive, permettant la gestion de fiches de frais.",
+      image: "public/assets/images/gsb.webp",
       technologies: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "PHP", "MySQL"],
       github: "https://github.com/Jyraven/Afip.git",
       demo: "/project/1"
@@ -22,33 +23,33 @@ export default function Projects() {
     {
       id: 2,
       title: "Portail Admin",
-      description: "Projet de développement d'une application web en entreprise visant a créer des comptes destinées a être utilisé dans une appli mobile",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-      technologies: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "PHP", "pgSQL"],
+      description: "Une application web développée pour mon entreprise destiné à la gestion des comptes utilisateurs qui serviront à une application mobile en interne.",
+      image: "public/assets/images/admin.webp",
+      technologies: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "PHP", "PgSQL"],
       demo: "/project/2"
     },
     {
       id: 3,
       title: "Portfolio",
-      description: "Portfolio personnel présentant mes compétences et réalisations.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      github: "#",
+      description: "Portfolio personnel présentant mes compétences et réalisations de manière interactive.",
+      image: "public/assets/images/portfolio.webp",
+      technologies: ["React","TypeScript","Tailwind CSS","Framer Motion","React Router","Lucide React","Formspree","Vite","ESLint"],
+      github: "https://github.com/Jyraven/My_Portfolio",
       demo: "/project/3"
     },
     {
       id: 4,
       title: "Présence en ligne de l'organisation",
-      description: "TP ",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
-      technologies: [],
+      description: "Travail pratique sur les stratégies de référencement et la visibilité en ligne d'une organisation.",
+      image: "public/assets/images/seo.webp",
+      technologies: ["HTML5"],
       demo: "/project/4"
     },
     {
       id: 5,
       title: "GLPI",
-      description: "Utilisation de GLPI dans un but de support technique et de contrôle d'inventaire.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+      description: "Mise en œuvre de GLPI pour le support technique, la gestion d'inventaire et la traçabilité des incidents.",
+      image: "public/assets/images/glpi.webp",
       technologies: [],
       demo: "/project/5"
     }
@@ -84,7 +85,8 @@ export default function Projects() {
                   className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="flex gap-4">
+                <div className="flex gap-4">
+                  {project.github && (
                     <a
                       href={project.github}
                       className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/40 transition-colors"
@@ -93,13 +95,16 @@ export default function Projects() {
                     >
                       <Github className="w-6 h-6 text-white" />
                     </a>
+                  )}
+                  {project.demo && (
                     <Link
                       to={project.demo}
                       className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/40 transition-colors"
                     >
                       <ExternalLink className="w-6 h-6 text-white" />
                     </Link>
-                  </div>
+                  )}
+                </div>
                 </div>
               </div>
               <div className="p-6">

@@ -15,16 +15,8 @@ export default function TechWatch() {
       title: "L'évolution de l'Intelligence Artificielle en 2024",
       date: "15 Mars 2024",
       summary: "Analyse des dernières avancées en IA et leur impact sur le développement web...",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80",
+      image: "assets/images/cover.webp",
       readTime: "5 min"
-    },
-    {
-      id: 2,
-      title: "Les tendances DevOps pour 2024",
-      date: "10 Mars 2024",
-      summary: "Découvrez les nouvelles pratiques et outils qui révolutionnent le DevOps...",
-      image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&q=80",
-      readTime: "4 min"
     }
   ];
 
@@ -41,7 +33,7 @@ export default function TechWatch() {
           <p className="text-lg text-gray-600 dark:text-gray-300">Restez informé des dernières tendances tech</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="flex justify-center">
           {articles.map((article, index) => (
             <motion.article
               key={article.id}
@@ -49,7 +41,7 @@ export default function TechWatch() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-slate-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-slate-50 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 max-w-2xl w-full"
             >
               <img
                 src={article.image}
