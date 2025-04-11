@@ -11,7 +11,7 @@ export default function TechArticle() {
       title: "L’IA générative : nouvel allié du développement de jeux vidéo",
       date: "15 Mars 2025",
       readTime: "5 min",
-      image: "assets/images/cover.webp",
+      image: "/My_Portfolio/assets/images/cover.webp",
       extraInfo: [
         { type: "title", content: "L'IA générative dans le développement de jeux vidéo : révolution des processus de création" },
         { type: "subtitle", content: "Introduction à l'IA générative dans le jeu vidéo" },
